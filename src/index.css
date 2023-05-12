@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base{ */
+
+body {
+  @apply bg-[#FFFAF4];
+}
+.orange_gradient {
+  @apply bg-gradient-to-b from-blue-700 via-blue-800 to-gray-900 bg-clip-text text-transparent;
+}
+.desc {
+  @apply mt-5 text-sm md:text-lg text-gray-600 sm:text-xl max-w-2xl;
+}
+.head_text {
+  @apply mt-5 text-3xl md:text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+}
+.blog_card {
+  @apply flex-1 break-inside-avoid rounded-lg border border-blue-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+}
+.feed {
+  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+}
+.search_input {
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-roboto pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
