@@ -4,6 +4,7 @@ import Form from "../components/Form";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
+import { createPosts } from "../redux/actions/fetchPosts";
 
 const CreatePost = () => {
   const [submitting, setIsSubmitting] = useState(false);
@@ -12,15 +13,15 @@ const CreatePost = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const createPosts = async (e) => {
-    e.preventDefault();
+  const createPost = async () => {
     setIsSubmitting(true);
-    // console.log(post);
+   
     dispatch(createPosts(post));
     if (!error) {
       navigate("/");
       return;
     }
+    console.log(error);
     alert(error.message);
   };
 
@@ -31,7 +32,7 @@ const CreatePost = () => {
         post={post}
         setPost={setPost}
         submitting={submitting}
-        handleSubmit={createPosts}
+        handleSubmit={createPost}
       />
     </div>
   );

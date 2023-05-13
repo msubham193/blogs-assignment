@@ -23,7 +23,6 @@ export const deletePosts = createAsyncThunk("posts/deletePosts", async (id) => {
 export const createPosts = createAsyncThunk(
   "posts/createPost",
   async (post) => {
-    // console.log(post);
     try {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/posts",
@@ -44,7 +43,7 @@ export const createPosts = createAsyncThunk(
       const data = await response.json();
       return data;
     } catch (error) {
-      alert("Error creating post");
+      console.log(error.message);
     }
   }
 );
