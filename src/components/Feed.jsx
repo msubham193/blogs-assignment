@@ -40,7 +40,7 @@ const Feed = ({ posts }) => {
     return 0;
   };
 
-  const onSortClick = () => {
+  const onSortClick = async () => {
     const sorted = [...post].sort(compareTitles);
     setPost(sorted);
   };
@@ -70,12 +70,14 @@ const Feed = ({ posts }) => {
         <div className="text-red-800 ">Error happens</div>
       ) : (
         <div className="grid sm:grid-cols-2 xl:grid-cols-3   gap-4 mt-10 ">
-          {post.map((item, i) => (
+          {post?.map((item, i) => (
             <Blog
               key={item.id}
               title={item.title}
               body={item.body}
-              userId={item.userId}
+              id={item.id}
+              posts={post}
+              setPosts={setPost}
             />
           ))}
         </div>

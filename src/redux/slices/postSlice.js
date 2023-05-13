@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchPosts } from "../actions/fetchPosts";
+import { deletePosts, fetchPosts } from "../actions/fetchPosts";
 
 const initialState = {
   posts: [],
@@ -10,6 +10,12 @@ const initialState = {
 const postsSlice = createSlice({
   name: "posts",
   initialState,
+  reducers: {
+    addPost(state, action) {
+      state.loading = false;
+      state.posts = action.payload;
+    },
+  },
   extraReducers: {
     [fetchPosts.pending]: (state) => {
       state.loading = true;
@@ -23,10 +29,19 @@ const postsSlice = createSlice({
       state.loading = false;
       state.error = action.error.message;
     },
+    [deletePosts.pending]: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    [deletePosts.fulfilled]: (state, action) => {
+      state.loading = false;
+    },
+    [deletePosts.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    },
   },
 });
 
-export const { fetchPostsStart, fetchPostsSuccess, fetchPostsError } =
-  postsSlice.actions;
-
+export const { addPost } = postsSlice.actions;
 export default postsSlice.reducer;
