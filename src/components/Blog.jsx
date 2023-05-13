@@ -1,22 +1,18 @@
-
 import React, { useCallback } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 
 const Blog = ({ title, body, id, posts, setPosts }) => {
-
-
   const handleDeletePost = useCallback(
     (id) => {
       alert(`are you sure you want to delete  ${title} ?`);
       const newPosts = posts.filter((post) => post.id !== id);
-     
+
       setPosts(newPosts);
     },
     [posts, setPosts, title]
   );
   return (
     <div className="border border-cyan-600 p-5 text-center flex flex-col items-center rounded-lg">
-      <i class="fa-regular fa-trash"></i>
       <h1 className="font-bold text-lg">{title.slice(0, 30)}</h1>
       <p className="text-gray-500 first-letter:text-lg">{body.slice(0, 100)}</p>
       <div
