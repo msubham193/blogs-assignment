@@ -1,21 +1,18 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React, { useCallback } from "react";
 import { MdDeleteOutline } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { deletePosts } from "../redux/actions/fetchPosts";
-import { addPost } from "../redux/slices/postSlice";
+
 const Blog = ({ title, body, id, posts, setPosts }) => {
-  const dispatch = useDispatch();
+
 
   const handleDeletePost = useCallback(
     (id) => {
       alert(`are you sure you want to delete  ${title} ?`);
       const newPosts = posts.filter((post) => post.id !== id);
-      // console.log(newPosts);
-
+     
       setPosts(newPosts);
     },
-    [posts]
+    [posts, setPosts, title]
   );
   return (
     <div className="border border-cyan-600 p-5 text-center flex flex-col items-center rounded-lg">

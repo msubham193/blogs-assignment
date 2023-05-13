@@ -9,8 +9,7 @@ const Hero = () => {
         <span className="orange_gradient text-center"> Intresting Blogs.</span>
       </h1>
       <p className="desc text-center">
-        Motivyy is an open-source Motivational Quotes sharing application . you
-        can share your thoughts with others.
+       Lorem ipsum dolor sit, amet consectetur adipisicing elit. In sint nam ut quia iusto excepturi omnis earum porro accusamus repellendus!
       </p>
 
       

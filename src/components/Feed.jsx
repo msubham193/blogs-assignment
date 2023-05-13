@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { data } from "../data";
+
 import Blog from "./Blog";
 import { useSelector } from "react-redux";
 
@@ -62,7 +62,7 @@ const Feed = ({ posts }) => {
           className=" mt-10 ml-5 h-10 cursor-pointer bg-black p-2 rounded-lg text-white"
           onClick={onSortClick}
         >
-          Sort
+          Sort 
         </div>
       </div>
 

@@ -10,7 +10,7 @@ const Navbar = () => {
         Blog.
       </h1>
 
-      <Button nav={true} />
+      <Button nav={true}  />
     </div>
   );
 };
