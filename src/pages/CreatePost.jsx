@@ -15,7 +15,7 @@ const CreatePost = () => {
 
   const createPost = async () => {
     setIsSubmitting(true);
-   
+
     dispatch(createPosts(post));
     if (!error) {
       navigate("/");
